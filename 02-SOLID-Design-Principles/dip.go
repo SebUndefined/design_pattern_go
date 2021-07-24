@@ -58,6 +58,9 @@ func (r *Relationships) AddParentToChild(parent, child *Person) {
 type Research struct {
 	// Break DIP
 	//relationships Relationships
+	// Research which is a hlm does not depend of Relationships (llm). It depends of an interface.
+	// Then, we can change the implementation of Relationships by storing the relations differently
+	// We then have to implement a method on Relationships and use it in the HLM
 	browser RelationshipBrowser
 }
 
